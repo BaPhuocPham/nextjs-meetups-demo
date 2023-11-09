@@ -38,7 +38,11 @@ export async function getStaticPaths() {
   client.close();
 
   return {
-    fallback: false, //where variable like id in params is ready if false if user access other id -> 404, if true will create a link for this id
+    //where variable like id in params is ready
+    //if false if user access other id -> 404, if true will create a link for this id
+    //when deploy we add more detial if false this detail page will 404 error
+    //because all detail id will determine at buiding time
+    fallback: "blocking", //=== true
     paths: meetups.map((meetup) => ({
       params: { meetupId: meetup._id.toString() },
     })),

@@ -25,7 +25,7 @@ const DUMMY_MEETUPS = [
 function HomePage(props) {
   return (
     <Fragment>
-      //create a head for google search
+      {/* create a head for google search */}
       <Head>
         <title>React Meetups</title>
         <meta
